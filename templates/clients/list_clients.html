@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Listado de Clientes
+{% endblock %}
+
+{% block content %}
+
+    <h1><u>Listado de Clientes</u></h1>
+    <!--<h2>Crear nuevo producto </h2> <a href="/products/create-product/" class="btn btn-primary">Crear</a>
+    -->{% for client in clients %}
+
+
+        <div class="card" style="width: 18rem;">
+            <img src="https://cdn-icons-png.flaticon.com/512/55/55314.png" class="card-img-top" alt="imagen de cliente" height="200">
+            <div class="card-body">
+            <h5 class="card-title">{{client.name}} {{client.last_name}}</h5>
+            <p class="card-text">Edad: <b>{{client.age}}</b></p>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}
