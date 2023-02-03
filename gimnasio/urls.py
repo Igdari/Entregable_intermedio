@@ -17,6 +17,9 @@ from django.contrib import admin
 from django.urls import path, include
 
 from gimnasio.views import index
+from django.conf.urls.static import static
+
+from gimnasio.settings import MEDIA_ROOT, MEDIA_URL
 
 urlpatterns = [
     path('', index, name='index'),
@@ -25,4 +28,5 @@ urlpatterns = [
     path('clients/', include('clients.urls')),
     path('trainers/', include('trainers.urls')),
     path('plans/', include('plans.urls')),
-]
+    path('users/', include('users.urls')),
+] + static(MEDIA_URL, document_root = MEDIA_ROOT)

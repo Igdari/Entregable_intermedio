@@ -5,5 +5,15 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Hola desde el indice</h1>
+    <h1><center>Bienvenido a Nuestro centro de Entrenamiento</center></h1>
+    {% if request.user.is_authenticated %}
+        {% if message %}
+        <br><br>
+            <center><h2>{{message}}</h2></center>
+        {% endif %}
+    {% else %}
+        <br><br><br>
+        <h5><center>Aún no esta logueado. Por favor Ingrese para conocer nuestros Planes</center></h5>
+    {% endif %}
+    
 {% endblock %}

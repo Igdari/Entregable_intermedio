@@ -16,6 +16,8 @@
             <div class="card-body">
             <h5 class="card-title">{{client.name}} {{client.last_name}}</h5>
             <p class="card-text">Edad: <b>{{client.age}}</b></p>
+            <a href="/clients/update-client/{{client.id}}/" class="btn btn-primary">Actualizar</a>
+            <!-- <a href="/clients/provider-delete/{{provider.id}}/" class="btn btn-danger">Borrar</a> -->
             </div>
         </div>
     {% endfor %}
